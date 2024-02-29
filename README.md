@@ -19,6 +19,6 @@ La carpeta ./gpax/swarn con tiene las configuraciones para instalar el gpax medi
 
 ## dockers de gpax
 
-![alt](https://github.com/infowarecr/dockers/blob/main/gpaxbuilder/gpaxbuilder.png =450x)
+<img src="https://github.com/infowarecr/dockers/blob/main/gpaxbuilder/gpaxbuilder.png" alt="drawing" width=500/>
 
 GPAX Builder es una plataforma low-code enfocada en interoperabilidad con sistemas preexistentes.
