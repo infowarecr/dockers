@@ -4,12 +4,8 @@ services:
   gpaxapi:
     image: infowarecr/gpax:latest
     command: ["node", "gpax.js"]
-    networks:
-      - host
+    networks_mode: host
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
-networks:
-  host:
-    external: true
