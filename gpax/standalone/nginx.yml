@@ -3,11 +3,7 @@ version: '3.8'
 services:
   gpaxweb:
     image: infowarecr/gpax_web:local20240228
-    ports: 
-      - 80:80
-      - 443:443
-    networks:
-      - host
+    network_mode: host
     deploy:
       replicas: 1
       placement:
@@ -15,10 +11,6 @@ services:
           - node.labels.gpax.replica == 1
     volumes:
       - /root/ssl:/etc/nginx/ssl
-networks:
-  mongo:
-    external: true
-
 
 # En la ruta /root/ssl deben estar los siguientes archivos:
 #  - /root/ssl/cert.pem;          # Certificado wildcard
