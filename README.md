@@ -17,7 +17,7 @@ Hay dos formas de instalr el gpax, usando un enjambre de servidores (swarm) o us
 
 La carpeta ./gpax/swarn con tiene las configuraciones para instalar el gpax mediante cuatro contenedores: gpax, gantt, puthon, nginx
 
-
+#
 
 
 ## gpax builder
