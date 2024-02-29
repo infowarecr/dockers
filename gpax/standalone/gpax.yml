@@ -3,6 +3,8 @@ version: '3.8'
 services:
   gpaxapi:
     image: infowarecr/gpax:latest
+    environment:
+      - host=gpax1
     command: ["node", "gpax.js"]
     networks_mode: host
     deploy:
