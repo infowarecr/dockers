@@ -5,7 +5,7 @@ Scripts y procedimientos para instalar los productos de Infoware en dockers
 
 ## dockers de gpax
 
-![alt](https://github.com/infowarecr/dockers/blob/main/gpax/gpax.png)
+![alt](https://github.com/infowarecr/dockers/blob/main/gpax/gpax.png =300x)
 
 GPAX es una aplicación para gestión de proyectos, que incluye la gestión docuemntal y el seguimiento de pendientes
 
@@ -19,6 +19,6 @@ La carpeta ./gpax/swarn con tiene las configuraciones para instalar el gpax medi
 
 ## dockers de gpax
 
-![alt](https://github.com/infowarecr/dockers/blob/main/gpaxbuilder/gpaxbuilder.png)
+![alt](https://github.com/infowarecr/dockers/blob/main/gpaxbuilder/gpaxbuilder.png =450x)
 
 GPAX Builder es una plataforma low-code enfocada en interoperabilidad con sistemas preexistentes.
