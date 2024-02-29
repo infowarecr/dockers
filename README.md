@@ -3,7 +3,7 @@
 Scripts y procedimientos para instalar los productos de Infoware en dockers
 
 
-## dockers de gpax
+## gpax
 
 <img src="https://github.com/infowarecr/dockers/blob/main/gpax/gpax.png" alt="drawing" width=300/>
 
@@ -17,7 +17,7 @@ Hay dos formas de instalr el gpax, usando un enjambre de servidores (swarm) o us
 La carpeta ./gpax/swarn con tiene las configuraciones para instalar el gpax mediante cuatro contenedores: gpax, gantt, puthon, nginx
 
 
-## dockers de gpax
+## gpax builder
 
 <img src="https://github.com/infowarecr/dockers/blob/main/gpaxbuilder/gpaxbuilder.png" alt="drawing" width=500/>
 
