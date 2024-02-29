@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  gpaxapi1:
+    image: infowarecr/gpax:latest
+    command: ["node", "gpax.js"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 1
+  gpaxapi2:
+    image: infowarecr/gpax:latest
+    command: ["node", "gpax.js"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 2
+  gpaxapi3:
+    image: infowarecr/gpax:latest
+    command: ["node", "gpax.js"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 3
+networks:
+  mongo:
+    external: true
+    name: mongo_mongo

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  gpaxpython:
+    image: infowarecr/pygpax
+    command: ["python", "app.py"]
+    networks:
+      - host
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+networks:
+  host:
+   external: true

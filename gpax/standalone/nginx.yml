@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  gpaxweb:
+    image: infowarecr/gpax_web:local20240228
+    ports: 
+      - 80:80
+      - 443:443
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 1
+    volumes:
+      - /root/ssl:/etc/nginx/ssl
+networks:
+  mongo:
+    external: true
+    name: mongo_mongo
+
+
+# En la ruta /root/ssl deben estar los siguientes archivos:
+#  - /root/ssl/cert.pem;          # Certificado wildcard
+#  - /root/ssl/priv.key;          # Llave privada del certificado
+#  - /root/ssl/passwords.txt;     # Archivo con el pass phrase del certificado
+#  - /root/ssl/options-ssl.conf;  # Opciones ssl para activar
+#  - /root/ssl/dhparams.pem       # Opciones DHParams

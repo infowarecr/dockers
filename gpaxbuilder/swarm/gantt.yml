@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  gpaxgantt1:
+    image: infowarecr/gpax_gantt
+    command: ["node", "gantt.js"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 1
+  gpaxgantt2:
+    image: infowarecr/gpax_gantt
+    command: ["node", "gantt.js"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 2
+  gpaxgantt3:
+    image: infowarecr/gpax_gantt
+    command: ["node", "gantt.js"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 3
+networks:
+  mongo:
+   external: true
+   name: mongo_mongo

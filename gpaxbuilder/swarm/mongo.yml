@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  gpax1:
+    image: mongo:5
+    command: ["mongod", "--replSet", "gpax"]
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /gpax:/data/db
+      - mongo-config-1:/data/configdb
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 1
+  gpax2:
+    image: mongo:5
+    command: ["mongod", "--replSet", "gpax"]
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /gpax:/data/db
+      - mongo-config-2:/data/configdb
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 2
+  gpax3:
+    image: mongo:5
+    command: ["mongod", "--replSet", "gpax"]
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /gpax:/data/db
+      - mongo-config-3:/data/configdb
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 3
+volumes:
+  mongo-config-1:
+  mongo-config-2:
+  mongo-config-3:
+networks:
+  mongo:

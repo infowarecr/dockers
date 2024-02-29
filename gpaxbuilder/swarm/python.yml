@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  gpaxpython1:
+    image: infowarecr/pygpax
+    command: ["python", "app.py"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 1
+  gpaxpython2:
+    image: infowarecr/pygpax
+    command: ["python", "app.py"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 2
+  gpaxpython3:
+    image: infowarecr/pygpax
+    command: ["python", "app.py"]
+    networks:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.gpax.replica == 3
+networks:
+  mongo:
+   external: true
+   name: mongo_mongo
