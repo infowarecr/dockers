@@ -5,7 +5,7 @@ Scripts y procedimientos para instalar los productos de Infoware en dockers
 
 ## dockers de gpax
 
-![alt](https://github.com/infowarecr/dockers/blob/main/gpax/gpax.png =300x)
+<img src="https://github.com/infowarecr/dockers/blob/main/gpax/gpax.png" alt="drawing" width=300/>
 
 GPAX es una aplicación para gestión de proyectos, que incluye la gestión docuemntal y el seguimiento de pendientes
 
