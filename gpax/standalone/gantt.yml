@@ -6,12 +6,8 @@ services:
     environment:
       - host=gpax1
     command: ["node", "gantt.js"]
-    networks:
-      - host
+    network_mode: host
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
-networks:
-  host:
-   external: true
