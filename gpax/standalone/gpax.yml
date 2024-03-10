@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   gpaxapi:
-    image: infowarecr/gpax:latest
+    image: infowarecr/gpax:20240304
     environment:
       - host=gpax1
     command: ["node", "gpax.js"]
