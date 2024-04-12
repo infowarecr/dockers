@@ -1,11 +1,21 @@
 FROM linuxserver/code-server:amd64-4.4.0-ls127
+# Instala el git 
 RUN curl -fsSL https://raw.githubusercontent.com/tj/n/master/bin/n | bash -s lts
+# Instala pm2 
+RUN npm install -g pm2
+# Instala python 3.10
 RUN apt update
-RUN apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
-RUN wget https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tgz
-RUN tar -xf Python-3.10.*.tgz
-RUN cd Python-3.10.*
+RUN apt -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+RUN wget https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
+RUN tar -xf Python-3.10.14.tgz
+RUN cd Python-3.10.14
 RUN ./configure --prefix=/usr/local --enable-optimizations --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
 RUN make
 RUN make altinstall
-RUN pip3.10 install --user --upgrade pip
+RUN pip3.10 install --user --upgrade pip 
+#Instala docker cliente
+RUN apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+RUN apt-get update
+RUN apt-get -y install docker-ce
