@@ -27,7 +27,9 @@
  
 
 3. Descargue archivo de configuración del NGINX y editedo para reemplazar los siguientes elementos:
-[Descargar archivo de configuración](blob:https://github.com/bc30d645-8655-4a54-aaf7-7c.7e2c2a5d89)
+
+[Descargar archivo de configuración](https://github.com/bc30d645-8655-4a54-aaf7-7c.7e2c2a5d89).
+
 ```nginx
    gpax.com         -> por el dominio del sitio principal del gpax
    gpaxalterno.com  -> por el dominio del sitio alterno del gpax
@@ -37,8 +39,9 @@
 
 
 4. Descargue los archivos de configuración con las recomendaciones de seguridad:
-[options-ssl-nginx.conf](blob:https://github.com/019f45e5-9668-42ef-a11f-9658f3970b23).
-[ssl-dhparams.pem](blob:https://github.com/d594ec24-b2ed-4456-bb66-0aca0acfce4e).
+
+[options-ssl-nginx.conf](https://github.com/019f45e5-9668-42ef-a11f-9658f3970b23).
+[ssl-dhparams.pem](https://github.com/d594ec24-b2ed-4456-bb66-0aca0acfce4e).
 
 
 5. Tome los archivos que descargo en el paso anterior, el archivo fullchain.pem (que contiene la cadena de certificados desde el CA hasta el certificado del domino) y el archivo privkey.pem que debe contener la llave privada del domino público y pongalos en el directorio "/root/ssl".
